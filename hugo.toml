@@ -1,4 +1,4 @@
 baseURL = 'https://example.org/'
 languageCode = 'zh-CN'
-title = 'Danica's Blog'
+title = 'Danica_Blog'
 theme = 'stack'
