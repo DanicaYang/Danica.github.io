@@ -1,149 +1,84 @@
 module:
     hugoVersion:
-        extended: true
-        min: "0.87.0"
+        extended: true  # 是否启用Hugo的扩展功能，设置为true意味着使用Hugo的完整版，支持更多功能
+        min: "0.87.0"  # 最低支持的Hugo版本，确保你的环境使用的版本不低于此版本
 
 params:
     mainSections:
-        - post
-    featuredImageField: image
-    rssFullContent: true
-    favicon:
+        - post  # 指定主页上显示的主要部分，这里表示展示"post"部分，通常是博客文章
+    featuredImageField: image  # 设置文章的特色图片字段，指示Hugo模板使用哪个字段来展示文章的封面图
+    rssFullContent: true  # 启用完整内容的RSS订阅，设置为true表示RSS中将包含文章的完整内容
+
+    favicon:  # 这个字段为空，意味着默认不会设置站点的favicon图标。你可以填写图标路径，例如 "favicon.ico"
 
     footer:
-        since:
-        customText:
+        since: 2025  # 网站底部显示的起始年份。可以填如 "2025" 表示网站从2025年开始
+        customText:  Danica Yang # 自定义的文本显示在网站底部，可以用于显示版权声明或其他信息
 
     dateFormat:
-        published: Jan 02, 2006
-        lastUpdated: Jan 02, 2006 15:04 MST
+        published: Jan 02, 2006  # 文章发布时间的日期格式，可以根据需要修改格式
+        lastUpdated: Jan 02, 2006 15:04 MST  # 文章最后更新时间的日期格式
 
     sidebar:
-        compact: false
-        emoji:
-        subtitle:
+        compact: false  # 是否启用紧凑型侧边栏，设置为false表示侧边栏内容较为宽松
+        emoji:  🥰# 可以设置为你喜欢的表情，默认为空
+        subtitle:  # 在侧边栏中显示的副标题
         avatar:
-            enabled: true
-            local: true
-            src: img/avatar.png
+            enabled: true  # 是否启用头像显示，设置为true表示会显示头像
+            local: true  # 是否使用本地头像，设置为true表示头像从本地加载
+            src: C:\Users\杨悦\Danica\themes\stack\images\touxiang.jpg  # 头像的路径，确保路径正确并且文件存在
 
     article:
-        headingAnchor: false
-        math: false
-        toc: true
-        readingTime: true
+        headingAnchor: false  # 是否启用文章标题锚点，设置为false表示标题不可直接链接
+        math: true  # 是否启用数学公式支持，设置为false表示不支持
+        toc: true  # 是否在文章中启用目录（Table of Contents），设置为true表示启用
+        readingTime: true  # 是否在文章页面显示预计阅读时间，设置为true表示显示
         license:
-            enabled: false
-            default: Licensed under CC BY-NC-SA 4.0
+            enabled: false  # 是否启用版权许可，设置为false表示不显示版权声明
+            default: Licensed under CC BY-NC-SA 4.0  # 默认的版权许可类型
 
     comments:
-        enabled: false
-        provider: disqus
+        enabled: false  # 是否启用评论功能，设置为false表示不启用
+        provider: disqus  # 设置评论提供商，使用Disqus作为评论系统
 
         disqusjs:
-            shortname:
-            apiUrl:
-            apiKey:
-            admin:
-            adminLabel:
+            shortname:  disqus_q915XihCEb # Disqus的短名称，需要从Disqus网站上获取
+            apiUrl:  https://disqus.com/api/3.0/ # Disqus API URL
+            apiKey:  # Disqus API 密钥
+            admin:  # Disqus管理员用户名
+            adminLabel:  # 管理员标签
 
         utterances:
-            repo:
-            issueTerm: pathname
-            label:
+            repo:  # Utterances评论系统所使用的GitHub仓库
+            issueTerm: pathname  # 用来映射评论的路径或页面
+            label:  # 评论标签
 
-        beaudar:
-            repo:
-            issueTerm: pathname
-            label:
-            theme:        
+        # 可以选择其他评论系统配置，例如remark42, vssue等，每个系统的配置方式不同，需要提供相应的API密钥或仓库信息
 
-        remark42:
-            host:
-            site:
-            locale:
-
-        vssue:
-            platform:
-            owner:
-            repo:
-            clientId:
-            clientSecret:
-            autoCreateIssue: false
-
-        # Waline client configuration see: https://waline.js.org/en/reference/client/props.html
-        waline:
-            serverURL:
-            lang:
-            visitor:
-            avatar:
-            emoji:
-                - https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo
-            requiredMeta:
-                - nick
-                - mail
-            locale:
-                admin: Admin
-                placeholder:
-
-        twikoo:
-            envId:
-            region:
-            path:
-            lang:
-
-        giscus:
-            repo:
-            repoID:
-            category:
-            categoryID:
-            mapping:
-            strict:
-            lightTheme:
-            darkTheme:
-            reactionsEnabled: 1
-            emitMetadata: 0
-            inputPosition:
-            lang:
-
-        gitalk:
-            owner:
-            admin:
-            repo:
-            clientID:
-            clientSecret:
-
-        cusdis:
-            host:
-            id:
-
-    widgets:
-        homepage: []
-        page: []
+        widgets:
+            homepage:
+                - "最近文章"  # 这个位置可以设置为显示最近的几篇文章
+                - "热门标签"  # 例如可以显示常见的标签
+            page:
+                - "关于我"  # 在页面侧边栏中显示个人页面链接
 
     opengraph:
         twitter:
-            # Your Twitter username
-            site:
-
-            # Available values: summary, summary_large_image
-            card: summary_large_image
+            site:  # 填写你的Twitter用户名，设置后OpenGraph元数据将包含Twitter信息
+            card: summary_large_image  # Twitter卡片类型，表示展示大图
 
     defaultImage:
         opengraph:
-            enabled: false
-            local: false
-            src:
+            enabled: false  # 是否启用默认的OpenGraph图片，设置为false表示不启用
+            local: true  # 是否使用本地图片，设置为false表示不使用本地图片
+            src:  C:\Users\杨悦\Danica\themes\stack\images # 如果启用默认图片，可以在这里提供图片路径
 
     colorScheme:
-        # Display toggle
-        toggle: true
-
-        # Available values: auto, light, dark
-        default: auto
+        toggle: true  # 是否启用主题切换按钮，设置为true表示用户可以切换主题（如深色和浅色模式）
+        default: dark  # 默认的主题，设置为auto表示根据用户系统的主题自动切换
 
     imageProcessing:
         cover:
-            enabled: true
+            enabled: true  # 是否启用封面图片处理，设置为true表示对封面图进行处理（如裁剪、压缩等）
         content:
-            enabled: true
+            enabled: true  # 是否启用内容图片处理，设置为true表示对正文中的图片进行处理
