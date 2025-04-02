@@ -26,7 +26,7 @@ params:
         avatar:
             enabled: true  # 是否启用头像显示，设置为true表示会显示头像
             local: true  # 是否使用本地头像，设置为true表示头像从本地加载
-            src: "Danica/themes/stack/images/touxiang.jpg"  # 头像的路径，确保路径正确并且文件存在
+            src: "themes/stack/images/touxiang.jpg"  # 头像的路径，确保路径正确并且文件存在
 
     article:
         headingAnchor: false  # 是否启用文章标题锚点，设置为false表示标题不可直接链接
